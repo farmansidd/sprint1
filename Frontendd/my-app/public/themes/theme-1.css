@@ -1,0 +1,114 @@
+/* Theme 1: Corporate */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap');
+
+.resume-container {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+}
+
+.resume-header {
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.resume-name {
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 5px 0;
+}
+
+.resume-title {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
+
+.resume-contact-info {
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.resume-section {
+    margin-bottom: 30px;
+}
+
+.resume-section-title {
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    color: #2c3e50;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+}
+
+.resume-item {
+    margin-bottom: 20px;
+}
+
+.resume-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+}
+
+.resume-item-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.resume-item-date {
+    font-style: italic;
+    color: #666;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.resume-item-subtitle {
+    font-weight: 600;
+    color: #555;
+    margin: 0 0 5px 0;
+    font-size: 15px;
+}
+
+.resume-item-description {
+    margin: 5px 0;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.resume-skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resume-skill-item {
+    background: #ecf0f1;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: 600;
+}

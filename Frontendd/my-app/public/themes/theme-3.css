@@ -1,0 +1,124 @@
+/* Theme 3: Creative Professional */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.resume-container {
+    font-family: 'Poppins', sans-serif;
+    color: #2d3436;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    min-height: 1000px;
+    /* Force height for side bar view */
+}
+
+/* Sidebar for Header & Skills */
+.resume-header {
+    grid-column: 1 / -1;
+    /* Header spans full width initially, but let's change layout */
+    background: #0984e3;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Adjust layout: Header top, content split? Or Header left? 
+   Let's do Header Top Full Width for simplicity with this DOM structure */
+.resume-container {
+    display: block;
+    padding: 0;
+}
+
+.resume-header {
+    background: #6c5ce7;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.resume-name {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+.resume-title {
+    font-size: 20px;
+    opacity: 0.9;
+    margin: 5px 0 20px 0;
+    font-weight: 300;
+}
+
+.resume-contact-info {
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.resume-contact-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.resume-section {
+    padding: 0 40px;
+    margin-top: 40px;
+}
+
+.resume-section-title {
+    font-size: 24px;
+    color: #6c5ce7;
+    position: relative;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+.resume-section-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: #fab1a0;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.resume-item {
+    background: #fdfdfd;
+    border-left: 4px solid #fab1a0;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.resume-item-title {
+    color: #2d3436;
+    font-weight: 600;
+}
+
+.resume-item-subtitle {
+    color: #636e72;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.resume-skills-list {
+    margin-bottom: 40px;
+}
+
+.resume-skill-item {
+    display: inline-block;
+    background: #6c5ce7;
+    color: white;
+    padding: 5px 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 0 10px 0 10px;
+    font-size: 14px;
+}

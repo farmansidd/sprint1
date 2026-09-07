@@ -1,0 +1,110 @@
+/* Theme 4: Technical / Dense */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Roboto:wght@400;500;700&display=swap');
+
+.resume-container {
+    font-family: 'Roboto', sans-serif;
+    color: #212121;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-top: 5px solid #2f3640;
+}
+
+.resume-header {
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #999;
+    padding-bottom: 15px;
+}
+
+.resume-name {
+    font-family: 'Fira Code', monospace;
+    font-size: 28px;
+    color: #d35400;
+    margin: 0;
+}
+
+.resume-title {
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    color: #7f8c8d;
+    margin: 5px 0;
+}
+
+.resume-contact-info {
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.resume-contact-item::before {
+    content: '>';
+    color: #d35400;
+    margin-right: 5px;
+}
+
+.resume-section {
+    margin-bottom: 25px;
+}
+
+.resume-section-title {
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    background: #f1f2f6;
+    padding: 5px 10px;
+    margin: 0 0 15px 0;
+    border-left: 5px solid #d35400;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.resume-item {
+    margin-bottom: 15px;
+}
+
+.resume-item-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Fira Code', monospace;
+}
+
+.resume-item-title {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.resume-item-date {
+    font-size: 13px;
+    background: #eee;
+    padding: 2px 6px;
+    border-radius: 2px;
+}
+
+.resume-item-subtitle {
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.resume-item-description {
+    font-size: 13px;
+    line-height: 1.4;
+    color: #444;
+}
+
+.resume-skills-list {
+    margin: 0;
+    padding: 0;
+}
+
+.resume-skill-item {
+    display: inline-block;
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    padding: 2px 8px;
+    margin: 0 5px 5px 0;
+    color: #333;
+    background: #fafafa;
+}

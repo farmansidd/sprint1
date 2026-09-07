@@ -1,0 +1,460 @@
+   127.0.0.1:58357 - "OPTIONS /api/v1/projects/latest?topic_id=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65178 - "OPTIONS /api/v1/projects/latest?topic_id=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65178 - "GET /api/v1/projects/latest?topic_id=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58357 - "GET /api/v1/projects/latest?topic_id=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53481 - "OPTIONS /api/v1/roadmaps/generate HTTP/1.1" 200 OK
+INFO:root:Received roadmap generation request for goal: NODE developer , skill_level: intermediate
+INFO:app.services.ai_model_selector:Selected model: openai/gpt-oss-20b for complexity: simple
+INFO:app.services.ai_model_selector:Goal: 'NODE developer' | Skill Level: intermediate | Complexity: simple | Model: openai/gpt-oss-20b
+INFO:app.services.ai_service_updated:Using model: openai/gpt-oss-20b for complexity: simple
+INFO:app.services.ai_service_updated:Attempting to generate roadmap for goal: 'NODE developer' with model: openai/gpt-oss-20b
+INFO:app.services.ai_service_updated:Calling Groq model: openai/gpt-oss-20b
+INFO:app.services.ai_service_updated:Creating Groq LLM instance with model: openai/gpt-oss-20b
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+ERROR:app.services.ai_service_updated:Error calling AI model openai/gpt-oss-20b: Error code: 400 - {'error': {'message': "Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.", 'type': 'invalid_request_error', 'code': 'json_validate_failed', 'failed_generation': ''}}
+Traceback (most recent call last):
+  File "E:\CareerFORGE\CareerForge.ai\backend\app\services\ai_service_updated.py", line 528, in _call_ai_model
+    response = await model_llm.ainvoke(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+        langchain_messages
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\CareerFORGE\CareerForge.ai\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 500, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "e:\CareerFORGE\CareerForge.ai\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1877, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+        prompt_messages, stop=stop, callbacks=callbacks, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\CareerFORGE\CareerForge.ai\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1835, in agenerate
+    raise exceptions[0]
+  File "e:\CareerFORGE\CareerForge.ai\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 2168, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+        messages, stop=stop, run_manager=run_manager, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\CareerFORGE\CareerForge.ai\.venv\Lib\site-packages\langchain_groq\chat_models.py", line 648, in _agenerate
+    response = await self.async_client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\CareerFORGE\CareerForge.ai\.venv\Lib\site-packages\groq\resources\chat\completions.py", line 941, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+    )
+    ^
+  File "e:\CareerFORGE\CareerForge.ai\.venv\Lib\site-packages\groq\_base_client.py", line 1762, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\CareerFORGE\CareerForge.ai\.venv\Lib\site-packages\groq\_base_client.py", line 1576, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': "Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.", 'type': 'invalid_request_error', 'code': 'json_validate_failed', 'failed_generation': ''}}
+INFO:app.services.ai_service_updated:Calling Groq model: openai/gpt-oss-120b
+INFO:app.services.ai_service_updated:Creating Groq LLM instance with model: openai/gpt-oss-120b
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:app.services.ai_service_updated:Received response from model: openai/gpt-oss-120b
+INFO:app.services.ai_service_updated:AI response extracted from response.content
+INFO:app.services.ai_service_updated:AI content length: 14604 characters
+INFO:app.services.ai_service_updated:Raw AI response length: 14604 characters
+INFO:app.services.ai_service_updated:Cleaned JSON length: 10434 characters
+ERROR:app.services.ai_service_updated:AI response malformed for 'NODE developer'. Reason: Level 3 is not an object.
+ERROR:app.services.ai_service_updated:Raw AI content:
+[
+{"title":"Node.js Developer Learning Roadmap","description":"A structured, production‑oriented roadmap for intermediate programmers to master Node.js, covering core runtime concepts, asynchronous patterns, web development with Express, testing, performance, security, and deployment.","summary":"The roadmap is divided into three progressive levels: Core Node.js fundamentals, Web Development with Express, and Advanced Production Topics. Each level contains focused topics, concrete skills with estimated study time, essential resources, a micro‑project, and a quiz to assess understanding.","levels":[{"name":"Core Node.js","topics":[{"name":"Node.js Runtime & Modules","description":"Understanding the Node.js runtime, its module systems, and package management.","micro_project":{"title":"CLI Todo App","description":"Build a command‑line todo list application using Node.js core modules and npm scripts.","requirements":["Add, list, and delete tasks","Persist tasks to a JSON file","Use ES modules","Provide helpful CLI output"],"evaluation_criteria":["Correct functionality of all commands","Proper use of ES modules","Clean code structure","Error handling for file operations"],"starter_code":"// index.mjs\nimport { readFile, writeFile } from 'fs/promises';\n// TODO: implement CLI logic"},"subtopics":[{"name":"Runtime Basics","description":"Fundamentals of the Node.js runtime, V8 engine, and event loop.","skills":[{"id":"t1","name":"Install Node.js and Explore Runtime","description":"Install Node.js, verify version, and explore the V8 engine and event loop using simple scripts.","estimated_hours":2,"difficulty":"low","depends_on":[],"resources":[{"title":"Node.js Official Docs - Getting Started","url":"https://nodejs.org/en/docs/guides/getting-started-guide/"}]},{"id":"t2","name":"Package Management with npm","description":"Initialize a project, manage dependencies, and understand package.json scripts.","estimated_hours":2,"difficulty":"low","depends_on":["t1"],"resources":[{"title":"npm Documentation","url":"https://docs.npmjs.com/"}]}]},{"name":"Module System","description":"Working with CommonJS and ES modules in Node.js.","skills":[{"id":"t3","name":"CommonJS Modules","description":"Create and import modules using require and module.exports.","estimated_hours":2,"difficulty":"low","depends_on":["t2"],"resources":[{"title":"Node.js Modules - CommonJS","url":"https://nodejs.org/api/modules.html#modules_commonjs_modules"}]},{"id":"t4","name":"ES Modules (ESM)","description":"Use import/export syntax, configure package.json for ESM, and understand interop.","estimated_hours":3,"difficulty":"medium","depends_on":["t3"],"resources":[{"title":"Node.js ECMAScript Modules","url":"https://nodejs.org/api/esm.html"}]}]}]},{"name":"Asynchronous Programming","description":"Master callbacks, promises, and async/await patterns in Node.js.","micro_project":{"title":"Async File Processor","description":"Create a script that reads a directory of files, processes each fil
+ERROR:root:Exception during roadmap generation: AI response is malformed. Reason: Level 3 is not an object.
+ERROR:root:Traceback (most recent call last):
+  File "E:\CareerFORGE\CareerForge.ai\backend\app\services\ai_service_updated.py", line 1028, in generate_roadmap_from_goal
+    raise AIResponseMalformedError(
+        f"Level {level_index} is not an object."
+    )
+app.services.ai_service_updated.AIResponseMalformedError: Level 3 is not an object.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\CareerFORGE\CareerForge.ai\backend\app\routers\roadmaps.py", line 32, in generate_roadmap
+    ai_generated_roadmap_data = await generate_roadmap_from_goal(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "E:\CareerFORGE\CareerForge.ai\backend\app\services\ai_service_updated.py", line 1146, in generate_roadmap_from_goal
+    raise Exception(
+    ...<2 lines>...
+    )
+Exception: AI response is malformed. Reason: Level 3 is not an object.
+
+INFO:     127.0.0.1:53481 - "POST /api/v1/roadmaps/generate HTTP/1.1" 500 Internal Server Error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Fix backend JSON handling
+
+Inspect backend/app/services/ai_service_updated.py.
+
+Find the exact reason for:
+
+Level 3 is not an object.
+
+Do not simply remove validation.
+
+The backend must:
+
+Extract JSON safely from the AI response.
+Parse it with json.loads().
+Handle both accidental root-array responses and the canonical root-object response if necessary.
+Normalize the response into ONE canonical schema before returning it.
+Validate every level safely.
+Validate nested topics/subtopics/skills/resources safely.
+Never crash because the AI returned more items than expected.
+Never assume exactly 3 levels.
+Never assume exactly N topics or skills.
+Preserve valid extra content instead of truncating it.
+
+Preferred canonical root:
+
+{
+"title": "string",
+"description": "string",
+"summary": "string",
+"levels": [
+{
+"name": "string",
+"topics": []
+}
+]
+}
+
+If the AI accidentally returns:
+
+[
+{
+"title": "...",
+"description": "...",
+"summary": "...",
+"levels": [...]
+}
+]
+
+normalize it to:
+
+{
+"title": "...",
+"description": "...",
+"summary": "...",
+"levels": [...]
+}
+
+Do not duplicate or lose the roadmap data during normalization.
+
+2. Make validation tolerant of variable-length AI output
+
+Validation should check the TYPE and REQUIRED STRUCTURE, not fixed quantities.
+
+Bad:
+
+if len(levels) != 3:
+    raise ...
+
+Bad:
+
+for i in range(3):
+    ...
+
+Bad:
+
+topics[:5]
+
+Bad:
+
+levels[0]
+levels[1]
+levels[2]
+
+Good:
+
+for level in levels:
+    ...
+
+The code must support:
+
+1 level
+3 levels
+5 levels
+10 levels
+20 levels
+
+and similarly variable numbers of topics, subtopics, skills, and resources.
+
+Do not silently discard valid AI-generated content because it exceeds an expected count.
+
+3. Handle malformed individual optional fields gracefully
+
+Required structural fields should still be validated.
+
+For optional fields, normalize safely.
+
+For example:
+
+missing micro_project → null or safe default
+missing subtopics → []
+missing skills → []
+missing resources → []
+missing depends_on → []
+missing quiz → null
+
+Do NOT convert invalid objects into misleading fake content.
+
+If a required level is invalid, log the exact reason and return a controlled API error rather than an unhandled exception.
+
+4. Prevent huge AI responses from breaking the API
+
+The model can return a large roadmap.
+
+Review:
+
+JSON parsing
+Pydantic schemas/models
+FastAPI response models
+database serialization
+response size assumptions
+recursive/nested processing
+string truncation
+frontend API client
+
+Do not arbitrarily truncate the roadmap.
+
+If there is a legitimate infrastructure/API size limitation, identify it explicitly and implement pagination or another appropriate strategy rather than silently cutting the AI response.
+
+5. Fix the frontend to handle dynamic roadmap size
+
+Inspect the frontend roadmap components, especially:
+
+Roadmap.js
+roadmap API/service files
+topic/level components
+quiz/project components
+any component that assumes fixed indexes
+
+The frontend must render dynamically:
+
+roadmap.levels.map(...)
+
+and:
+
+level.topics.map(...)
+
+and:
+
+topic.subtopics.map(...)
+
+and:
+
+subtopic.skills.map(...)
+
+and:
+
+skill.resources.map(...)
+
+Do NOT hard-code:
+
+levels[0]
+levels[1]
+levels[2]
+
+Do NOT assume exactly 3 levels.
+
+Do NOT assume a fixed number of topics.
+
+Do NOT assume every topic has the same nested structure.
+
+Use safe defaults:
+
+const levels = roadmap?.levels ?? [];
+const topics = level?.topics ?? [];
+const subtopics = topic?.subtopics ?? [];
+const skills = subtopic?.skills ?? [];
+const resources = skill?.resources ?? [];
+6. Frontend must handle large responses gracefully
+
+If the AI returns a very large roadmap:
+
+Do not render unnecessary content all at once if it causes performance problems.
+Use collapsible levels/topics where appropriate.
+Render nested content only when needed.
+Avoid expensive repeated transformations during render.
+Avoid duplicate API requests.
+Show loading states.
+Show empty states.
+Show controlled error states.
+Do not crash if one optional nested property is missing.
+
+If the current UI already has expandable/collapsible roadmap sections, preserve that UX and make it work with arbitrary numbers of items.
+
+7. Keys must be stable
+
+When mapping arrays, use stable IDs when available.
+
+For example:
+
+skill.id
+
+If the AI does not provide an ID, create/use a deterministic fallback appropriate to the existing architecture.
+
+Avoid unstable/random keys generated on every render.
+
+8. API contract must be consistent
+
+Trace the response from:
+
+generate_roadmap_from_goal()
+        ↓
+FastAPI roadmap router
+        ↓
+response model/schema
+        ↓
+frontend API client
+        ↓
+Roadmap.js
+
+Make sure the same structure is used throughout.
+
+Do not have the backend return one structure while the frontend expects another.
+
+Document the final canonical response shape in the relevant code/schema.
+
+9. Improve AI prompt
+
+Update the roadmap-generation prompt so the model is explicitly instructed:
+
+Return ONLY valid JSON.
+Root must be an object.
+levels must be an array.
+Every level must be an object.
+Do not assume a fixed number of levels.
+Generate as many levels/topics/subtopics/skills as are appropriate for the requested goal and skill level.
+Do not wrap JSON in Markdown.
+Do not add explanatory text outside JSON.
+Keep nested fields consistent with the schema.
+
+However, do NOT solve the problem only through prompt changes. Backend validation and frontend rendering must remain robust even when the model produces a slightly different but recoverable structure.
+
+10. Keep the 20B → 120B fallback
+
+Do not remove the existing fallback.
+
+Current behavior:
+
+gpt-oss-20b
+      ↓
+if failure
+      ↓
+gpt-oss-120b
+
+Keep this architecture.
+
+If the 20B model fails JSON validation, log the reason and fall back cleanly to 120B.
+
+Do not treat a model failure as a frontend error.
+
+11. Add useful logging
+
+Add concise diagnostic logging around the AI response:
+
+selected model
+raw response size
+parsed root type
+number of levels
+number of topics
+validation failure path
+normalization performed
+
+Do NOT log API keys, tokens, credentials, or sensitive user data.
+
+Avoid dumping the entire huge AI response into production logs.
+
+12. Test with different response sizes
+
+Create/execute tests for at least:
+
+Small
+1 level
+1 topic
+1 subtopic
+1 skill
+1 resource
+Normal
+3–5 levels
+multiple topics
+multiple subtopics
+multiple skills
+multiple resources
+Large
+8–10+ levels
+many topics
+many nested skills/resources
+large descriptions
+micro-projects
+quizzes
+Edge cases
+
+Test:
+
+root object
+accidental root array
+empty levels
+missing optional fields
+level with many topics
+topic with many skills
+missing resources
+malformed individual optional fields
+20B model failure followed by 120B fallback
+
+The large test MUST prove that the frontend does not crash or silently drop valid roadmap data.
+
+13. Important constraints
+
+Do NOT:
+
+Rewrite the entire project.
+Remove schema validation.
+Hard-code a maximum number of levels/topics just to make the error disappear.
+Truncate AI responses without a documented reason.
+Change unrelated authentication, database, quiz, resume, or project flows.
+Create duplicate API endpoints.
+Introduce a second incompatible roadmap schema.
+Hide errors with empty arrays everywhere.
+Assume the AI will always follow the prompt perfectly.
+
+Make the smallest production-quality changes necessary.
+
+At the end, report:
+
+Root cause of Level 3 is not an object.
+Files changed.
+Backend schema after the fix.
+Frontend changes for dynamic data.
+How large responses are handled.
+Tests performed and their results.
+Confirm that POST /api/v1/roadmaps/generate works for:

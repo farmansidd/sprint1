@@ -1,0 +1,103 @@
+/* Theme 2: Modern Minimalist */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+.resume-container {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    line-height: 1.5;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+}
+
+.resume-header {
+    margin-bottom: 40px;
+}
+
+.resume-name {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin: 0 0 10px 0;
+    color: #000;
+}
+
+.resume-title {
+    font-size: 20px;
+    font-weight: 300;
+    color: #666;
+    margin: 0;
+}
+
+.resume-contact-info {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.resume-section {
+    margin-bottom: 40px;
+}
+
+.resume-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    margin: 0 0 20px 0;
+}
+
+.resume-item {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-left: 2px solid #f0f0f0;
+}
+
+.resume-item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.resume-item-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.resume-item-date {
+    font-size: 14px;
+    color: #888;
+}
+
+.resume-item-subtitle {
+    font-size: 16px;
+    color: #444;
+    font-weight: 400;
+    margin: 0 0 10px 0;
+}
+
+.resume-item-description {
+    font-size: 15px;
+    color: #444;
+}
+
+.resume-skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+}
+
+.resume-skill-item {
+    font-size: 14px;
+    border: 1px solid #e5e5e5;
+    padding: 6px 16px;
+    border-radius: 20px;
+    color: #333;
+}

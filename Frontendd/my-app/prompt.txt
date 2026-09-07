@@ -1,0 +1,20 @@
+1:60358 - "GET /api/v1/roadmaps HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60358 - "OPTIONS /api/v1/quizzes/topic/299/completion HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60358 - "OPTIONS /api/v1/quizzes/topic/299/completion HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60358 - "GET /api/v1/quizzes/topic/299/completion HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60358 - "OPTIONS /api/v1/quizzes/topic/300/completion HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54997 - "GET /api/v1/quizzes/topic/299/completion HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54997 - "GET /api/v1/quizzes/topic/300/completion HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65398 - "OPTIONS /api/v1/quizzes/topic/301/completion HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51634 - "GET /api/v1/quizzes/topic/300/completion HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65398 - "GET /api/v1/quizzes/topic/301/completion HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65398 - "OPTIONS /api/v1/quizzes/topic/302/completion HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51634 - "GET /api/v1/quizzes/topic/301/completion HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54997 - "GET /api/v1/quizzes/topic/302/completion HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54997 - "OPTIONS /api/v1/quizzes/topic/303/completion HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51634 - "GET /api/v1/quizzes/topic/302/completion HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54997 - "GET /api/v1/quizzes/topic/303/completion HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54997 - "OPTIONS /api/v1/roadmaps/66/milestones HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51634 - "GET /api/v1/quizzes/topic/303/completion HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54997 - "GET /api/v1/roadmaps/66/milestones HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51634 - "GET /api/v1/roadmaps/66/milestones HTTP/1.1" 200 OK
